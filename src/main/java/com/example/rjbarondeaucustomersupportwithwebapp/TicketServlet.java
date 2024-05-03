@@ -2,6 +2,8 @@ package com.example.rjbarondeaucustomersupportwithwebapp;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,6 +15,8 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+@WebServlet(name = "ticket", value="/ticket")
 
 public class TicketServlet extends HttpServlet {
     private Map<Integer, Ticket> ticketDB = new LinkedHashMap<>();
@@ -40,7 +44,7 @@ public class TicketServlet extends HttpServlet {
             action = "list";
         }
         switch(action) {
-            case "create " -> showTicketForm(request, response);
+            case "create" -> showTicketForm(request, response);
             case "view" -> viewTicket(request, response);
             case "download" -> downloadAttachment(request, response);
             default -> listTickets(request, response); // this the list and any other
@@ -52,13 +56,13 @@ public class TicketServlet extends HttpServlet {
 
         //heading and link to create a tick
         out.println("<html><body><h2>Ticket</h2>");
-        out.println("<a href=\"ticket?action=createTicket\">Create Ticket</a><br><br>");
+        out.println("<a href=\"ticket?action=create\">Create Ticket</a><br><br>");
 
         // list out the blogs
         if (ticketDB.size() == 0) {
-            out.println("There are no tickets yet...");
+            out.println("Currently no tickets");
         }
-        else {
+        else if(ticketDB.size() > 0){
             for (int id : ticketDB.keySet()) {
                 Ticket ticket = ticketDB.get(id);
                 out.println("Ticket #" + id);
@@ -106,14 +110,14 @@ public class TicketServlet extends HttpServlet {
             }
         }
 
-        // add and synchronize
+
         int id;
         synchronized(this) {
             id = this.TICKET_ID++;
             ticketDB.put(id, ticket);
         }
 
-        //System.out.println(blog);  // see what is in the blog object
+
         response.sendRedirect("ticket?action=view&ticketId=" + id);
     }
     private Attachment processAttachment(Part file) throws IOException{
@@ -134,7 +138,7 @@ public class TicketServlet extends HttpServlet {
         return attachment;
     }
     private void downloadAttachment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        String idString = request.getParameter("tickedId");
+        String idString = request.getParameter("ticketId");
 
         Ticket ticket = getTicket(idString, response);
 
