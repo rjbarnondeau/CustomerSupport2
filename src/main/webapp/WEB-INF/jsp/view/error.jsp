@@ -5,6 +5,6 @@
 </head>
 <body>
 <h2>An error occured</h2>
-<br><a href="ticket">Return to blog list</a>
+<br><a href="ticket">Return to ticket form list</a>
 </body>
 </html>
