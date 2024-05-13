@@ -17,6 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @WebServlet(name = "ticket", value="/ticket")
+@MultipartConfig(fileSizeThreshold = 5_242_880, maxFileSize = 20_971_520L, maxRequestSize = 41_943_040L)
 
 public class TicketServlet extends HttpServlet {
     private Map<Integer, Ticket> ticketDB = new LinkedHashMap<>();
@@ -47,6 +48,7 @@ public class TicketServlet extends HttpServlet {
             case "create" -> showTicketForm(request, response);
             case "view" -> viewTicket(request, response);
             case "download" -> downloadAttachment(request, response);
+            case "list" -> listTickets(request,response);
             default -> listTickets(request, response); // this the list and any other
         }
     }
@@ -156,7 +158,7 @@ public class TicketServlet extends HttpServlet {
     private void showTicketForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
 
-        request.getRequestDispatcher("WEB-INF/jsp/view/ticketForm").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/jsp/view/ticketForm.jsp").forward(request,response);
 
     }
 }
