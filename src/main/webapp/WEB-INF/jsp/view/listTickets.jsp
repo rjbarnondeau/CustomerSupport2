@@ -10,11 +10,11 @@
         <c:param name='action' value='create' />
     </c:url>">Create Ticket</a><br><br>
 <c:choose>
-    <c:when test="${ticketDB.size() == 0}">
+    <c:when test="${ticketDataBase.size() == 0}">
         <p>There are no tickets yet</p>
     </c:when>
     <c:otherwise>
-        <c:forEach var="ticket" items="${ticketDB}">
+        <c:forEach var="ticket" items="${ticketDataBase}">
             Ticket#:&nbsp;<c:out value="${ticket.key}"/>
             <a href="<c:url value='/ticket' >
                     <c:param name='action' value='view' />

@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c701a4cf-69f2-49b9-9686-2055132b67b4" name="Changes" comment="Added Jsp files for assignment 5">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c701a4cf-69f2-49b9-9686-2055132b67b4" name="Changes" comment="Idk">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/view/listTickets.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/view/listTickets.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/view/ticketForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/view/ticketForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +184,7 @@
       <workItem from="1714753528507" duration="689000" />
       <workItem from="1714755023466" duration="2129000" />
       <workItem from="1715268287411" duration="3415000" />
-      <workItem from="1715731935359" duration="397000" />
+      <workItem from="1715731935359" duration="1331000" />
     </task>
     <task id="LOCAL-00001" summary="Change to web app jakara ee">
       <option name="closed" value="true" />
@@ -226,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715270548370</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Idk">
+      <option name="closed" value="true" />
+      <created>1715732718932</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715732718932</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +243,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Change to web app jakara ee" />
     <MESSAGE value="Added Jsp files for assignment 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Jsp files for assignment 5" />
+    <MESSAGE value="Idk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Idk" />
   </component>
 </project>

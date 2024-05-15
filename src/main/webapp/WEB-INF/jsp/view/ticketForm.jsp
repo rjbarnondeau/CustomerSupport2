@@ -18,7 +18,7 @@
     <input type="text" name="customerName"><br><br>
     Body:<br>
     <textarea name="body" rows="25" cols="100"></textarea><br><br>
-    <b>Image</b><br>
+    <b>Attachment:</b><br>
     <input type="file" name="file1"><br><br>
     <input type="submit" value="Submit">
 </form>
