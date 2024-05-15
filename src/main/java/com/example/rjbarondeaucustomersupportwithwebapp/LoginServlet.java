@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
 
         // again check if already logged in
         if(session.getAttribute("username") != null) {
-            response.sendRedirect("blog");
+            response.sendRedirect("ticket");
             return;
         }
 
@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
         else {
             session.setAttribute("username", username);
             request.changeSessionId(); // protects against session fixation attacks
-            response.sendRedirect("blog");
+            response.sendRedirect("ticket");
         }
     }
 }
